@@ -1,10 +1,20 @@
 vim.opt.relativenumber = true
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.g.mapleader = " "
 
 -- Creation of a 'keymap' variable to avoid repeating 'vim.keymap'
 local keymap = vim.keymap
+-- Navigate vim panes better
+keymap.set('n', '<c-k>', ':wincmd k<CR>')
+keymap.set('n', '<c-j>', ':wincmd j<CR>')
+keymap.set('n', '<c-h>', ':wincmd h<CR>')
+keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Use jj as a shortcut for Esc in Insert mode 
-keymap.set('i', 'jj', '<Esc>')
+-- keymap.set('i', 'jj', '<Esc>')
 
 -- Key mappings for editing text
 keymap.set('n', 'x', '"_x') -- delete character without yanking
